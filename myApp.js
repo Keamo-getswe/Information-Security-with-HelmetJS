@@ -23,7 +23,7 @@ app.use(helmet.dnsPrefetchControl()); /*requires helmet v2.3.0*/
 app.use(helmet.noCache()); /*requires helmet v2.3.0*/
 app.use(
 	helmet.contentSecurityPolicy({ /*requires helmet v2.3.0*/
-		directive: {
+		directives: {
 			defaultSrc: ["'self'"],
 			scriptSrc: ["'self'", 'trusted-cdn.com']
 		}
