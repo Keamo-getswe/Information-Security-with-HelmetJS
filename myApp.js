@@ -8,17 +8,18 @@ app.use(
 	})
 );
 app.use(helmet.xssFilter());
-app.use(helmet.noSniff());
-app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff()); /*requires helmet v2.3.0*/
+app.use(helmet.ieNoOpen());/*requires helmet v2.3.0*/
 
 const ninetyDaysInSeconds = 90*24*60*60;
 app.use(
-	helmet.hsts({
+	helmet.hsts({ /*requires helmet v3.2.0*/
 		maxAge: ninetyDaysInSeconds,
 		force: true
 	})
 );
 
+app.use(helmet.dnsPrefetchControl())
 
 
 
