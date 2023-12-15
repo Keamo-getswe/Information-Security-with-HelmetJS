@@ -19,7 +19,8 @@ app.use(
 	})
 );
 
-app.use(helmet.dnsPrefetchControl())
+app.use(helmet.dnsPrefetchControl())/*requires helmet v2.3.0*/
+app.use(helmet.noCache())/*requires helmet v2.3.0*/
 
 
 
